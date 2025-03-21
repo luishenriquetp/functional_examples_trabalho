@@ -1,4 +1,4 @@
-package br.ada.desenvolva1321.trabalho;
+package br.com.trabalho;
 
 import java.util.function.Predicate;
 import java.util.function.Supplier;

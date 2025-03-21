@@ -1,51 +1,61 @@
-package br.ada.desenvolva1321.trabalho.word;
+package br.com.trabalho.word;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class WordPractice {
 
     private static final String[] WORDS = {"Arroz", "Feijão", "Ovo", "Frito", "Radar", "Osso"};
 
     public List<String> wordsLessThan5Characters() {
-        //Filtre apenas palavras que possuem menos de 5 caracteres
-        Arrays.stream(WORDS);
-        return null;
-
+        // Filtra apenas palavras que possuem menos de 5 caracteres
+        return Arrays.stream(WORDS)
+                .filter(word -> word.length() < 5)
+                .collect(Collectors.toList());
     }
 
     public List<String> words5Characters() {
-        // Filtre apenas palavras que possuem 5 caracteres
-        Arrays.stream(WORDS);
-        return null;
+        // Filtra apenas palavras que possuem exatamente 5 caracteres
+        return Arrays.stream(WORDS)
+                .filter(word -> word.length() == 5)
+                .collect(Collectors.toList());
     }
 
     public List<String> wordsGreaterThan5Characters() {
-        // Filtre apenas palavras que possuem mais de 5 caracteres
-        Arrays.stream(WORDS);
-        return null;
+        // Filtra apenas palavras que possuem mais de 5 caracteres
+        return Arrays.stream(WORDS)
+                .filter(word -> word.length() > 5)
+                .collect(Collectors.toList());
     }
 
     public List<String> wordsArePalindromes() {
-        // Identifique e retorne as palavras que sejam palíndromos(são iguais de trás para frente, exemplo: Radar)
-        Arrays.stream(WORDS);
-        return null;
+        // Identifica e retorna palavras que são palíndromos
+        return Arrays.stream(WORDS)
+                .filter(word -> word.equalsIgnoreCase(new StringBuilder(word).reverse().toString()))
+                .collect(Collectors.toList());
     }
 
     public Map<String, Integer> countLetterEachWord() {
-        //EXTRA
-        //Calcule quantos caracteres cada palavra têm, o retorno deve ser a palavra -> quantidade de carateres. Exemplo: Osso -> 4
-        Arrays.stream(WORDS);
-        return null;
+        // Retorna um mapa contendo cada palavra e sua contagem de caracteres
+        return Arrays.stream(WORDS)
+                .collect(Collectors.toMap(word -> word, String::length));
     }
-
 
     public Integer countLettersAllWordHave() {
-        // EXTRA
-        // Calcule quantos caracteres tem todas as palavras têm juntas.
-        Arrays.stream(WORDS);
-        return null;
+        // Soma o número total de caracteres de todas as palavras
+        return Arrays.stream(WORDS)
+                .mapToInt(String::length)
+                .sum();
     }
 
+    public static void main(String[] args) {
+        WordPractice wp = new WordPractice();
+
+        System.out.println("Palavras com menos de 5 caracteres: " + wp.wordsLessThan5Characters());
+        System.out.println("Palavras com exatamente 5 caracteres: " + wp.words5Characters());
+        System.out.println("Palavras com mais de 5 caracteres: " + wp.wordsGreaterThan5Characters());
+        System.out.println("Palavras que são palíndromos: " + wp.wordsArePalindromes());
+        System.out.println("Contagem de caracteres por palavra: " + wp.countLetterEachWord());
+        System.out.println("Total de caracteres em todas as palavras: " + wp.countLettersAllWordHave());
+    }
 }

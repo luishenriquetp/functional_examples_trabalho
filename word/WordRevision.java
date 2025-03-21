@@ -1,6 +1,6 @@
-package br.ada.desenvolva1321.trabalho.word;
+package br.com.trabalho.word;
 
-import br.ada.desenvolva1321.trabalho.Reviewer;
+import br.com.trabalho.Reviewer;
 
 import java.util.Arrays;
 
