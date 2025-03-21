@@ -1,6 +1,6 @@
-package br.com.trabalho.number;
+package br.ada.desenvolva1321.trabalho.number;
 
-import br.com.trabalho.Reviewer;
+import br.ada.desenvolva1321.trabalho.Reviewer;
 
 import java.util.Arrays;
 import java.util.Set;

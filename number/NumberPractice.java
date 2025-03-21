@@ -1,54 +1,43 @@
-package br.com.trabalho.number;
+package br.ada.desenvolva1321.trabalho.number;
 
-import java.util.*;
-import java.util.function.Function;
-import java.util.stream.Collectors;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 public class NumberPractice {
 
     private static final Integer[] NUMBERS = {4, 1, 1, 8, 1, 7, 3, 2, 3, 4};
 
     public List<Integer> numbersLessThan5() {
-        // Filtra todos os números que são menores que 5
-        return Arrays.stream(NUMBERS)
-                .filter(n -> n < 5)
-                .collect(Collectors.toList());
+        // Filtre todos os números que são menores que 5
+        Arrays.stream(NUMBERS);
+        return null;
     }
 
     public Set<Integer> removeRepeatNumbers() {
-        // Remove os números repetidos
-        return Arrays.stream(NUMBERS)
-                .collect(Collectors.toSet());
+        // Remova os números repetidos
+        Arrays.stream(NUMBERS);
+        return null;
     }
 
     public Integer sumAllNumbers() {
-        // Calcula a soma total dos números
-        return Arrays.stream(NUMBERS)
-                .mapToInt(Integer::intValue)
-                .sum();
+        // Calcule a soma total dos números.
+        Arrays.stream(NUMBERS);
+        return null;
     }
 
     public Integer sumNumbersWithoutRepeats() {
-        // Soma todos os números sem contar os repetidos
-        return Arrays.stream(NUMBERS)
-                .distinct()
-                .mapToInt(Integer::intValue)
-                .sum();
+        // Some todos os números, porém não utilize os repetidos
+        Arrays.stream(NUMBERS);
+        return null;
     }
 
     public Map<Integer, Long> countRepeatedNumber() {
-        // Conta quantas vezes cada número aparece na lista
-        return Arrays.stream(NUMBERS)
-                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+        // EXTRA
+        // Conte quantas vezes cada número aparece na lista. Exemplo de retorno: 4 -> 2, 1 -> 3
+        Arrays.stream(NUMBERS);
+        return null;
     }
 
-    public static void main(String[] args) {
-        NumberPractice np = new NumberPractice();
-
-        System.out.println("Números menores que 5: " + np.numbersLessThan5());
-        System.out.println("Sem números repetidos: " + np.removeRepeatNumbers());
-        System.out.println("Soma total dos números: " + np.sumAllNumbers());
-        System.out.println("Soma sem números repetidos: " + np.sumNumbersWithoutRepeats());
-        System.out.println("Contagem de números repetidos: " + np.countRepeatedNumber());
-    }
 }
